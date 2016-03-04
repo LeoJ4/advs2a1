@@ -1,0 +1,65 @@
+<!--This code is definitely wrong so please email me the correct solution!-->
+<html>
+<head>
+<title> s1a1 </title>
+</head>
+
+<BODY>
+<table>
+<tr valign="top">
+<td>
+<SELECT id="s" size="10" multiple>
+	<OPTION value="a">Ferrari</OPTION>
+	<OPTION value="b">Lamborghini</OPTION>
+	<OPTION value="c">Porsche</OPTION>
+	<OPTION value="d">Ducati</OPTION>
+	<OPTION value="e">Bugati</OPTION>
+	<OPTION value="f">Rolls Royce</OPTION>
+	<OPTION value="g">Jaguar</OPTION>
+</SELECT>
+</td>
+<td valign="center">
+<input type="button" onclick="listbox_moveacross('s', 'd')" value = "&gt;&gt;" />
+<br/>
+<input type="button" onclick="listbox_moveacross('d', 's')" value = "&lt;&lt;" />
+</td>
+<td>
+<SELECT id="d" size="10" multiple>
+	<OPTION value="h">Yamaha</OPTION>
+	<OPTION value="i">Honda</OPTION>
+	<OPTION value="j">Mercedes</OPTION>
+	<OPTION value="k">TATA motors</OPTION>
+	<OPTION value="l">BMW</OPTION>
+</SELECT>
+</td>
+</tr>
+<script type="text/javascript">
+function listbox_moveacross(sourceID,destID){
+    var src=document.getElementById(sourceID);
+    var dest=document.getElementById(destID);
+ for(var count=0;count<src.options.length;count++)
+ {
+ 		if(src.options[count].selected==true)
+ {
+ var option=src.options[count];
+ var newOption=document.createElement("option");
+ newOption.value=option.value;
+ newOption.text=option.text;
+ newOption.selected=true;
+ try
+{
+ dest.add(newOption,null);
+}
+count--;
+}
+}
+}
+
+</script>
+</table>
+
+</BODY>
+</HTML>
+
+
+
